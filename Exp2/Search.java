@@ -13,56 +13,65 @@ class Search{
 		for (Map.Entry<String,String> entry : data.entrySet()) {
 
 			String fileData = entry.getValue();
-			String[] myData = stringToSearch.split(" ");
-			int patternLen = myData.length;
-			int count = 0;
-			String pat = "";
-			for(String str : myData){
-				pat = pat.concat(str.toString());
-				Pattern p = Pattern.compile(pat.trim());
+			String[] queryArray = stringToSearch.split(" ");
+			int patternLen = queryArray.length;
+			int matchByAppendCount = 0;
+			String patternToSearch = "";
+			
+			// Match Pattern by appending word to string.
+			for(String currentElement : queryArray){
+				patternToSearch = patternToSearch.concat(currentElement.toString());
+				Pattern p = Pattern.compile(patternToSearch.trim(),Pattern.CASE_INSENSITIVE);
 				Matcher m = p.matcher(fileData);
 				while (m.find()) {
-					if(str.length() >= count){
-						count += 1;
+					if(currentElement.length() >= matchByAppendCount){
+						matchByAppendCount += 1;
 						break;
 					}
 				}
-				pat = pat.concat(" ");
+				patternToSearch = patternToSearch.concat(" ");
 			}
 			
-			pat = pat.trim();
+			// Remove any additional space.
+			patternToSearch = patternToSearch.trim();
 			
-			// Now Search from start
-			int newCount = patternLen;
-			if(count != patternLen){
+			// Match pattern while removing word from start of string.
+			int matchByRemoveCount = patternLen;
+			if(matchByAppendCount != patternLen){
 				
 				outerLoop:
 				for(int i=0; i<patternLen-1; i++){
-					String[] newPattern = pat.split(" ",2);
-					pat = newPattern[1];
-					Pattern p1 = Pattern.compile(pat);
+					String[] newPattern = patternToSearch.split(" ",2);
+					patternToSearch = newPattern[1];
+					Pattern p1 = Pattern.compile(patternToSearch,Pattern.CASE_INSENSITIVE);
 					Matcher m = p1.matcher(fileData);
 					while (m.find()) {
-						newCount--;
+						matchByRemoveCount--;
 						break outerLoop;
 					}
 				}
 			}
-			int result = 0;
-			if(count >= newCount){
-				result = count;
+			
+			// Get total count of matching words.
+			int totalCountOfWordsMatched = 0;
+			if(matchByAppendCount >= matchByRemoveCount){
+				totalCountOfWordsMatched = matchByAppendCount;
 			}
 			else{
-				result = newCount;
+				totalCountOfWordsMatched = matchByRemoveCount;
 			}
-
-			double percentageMatch = (result * 100);
+			
+			// Calculate %age
+			double percentageMatch = (totalCountOfWordsMatched * 100);
 			percentageMatch = (Math.round(percentageMatch/patternLen));
 			
+			// Add entry in map
 			tMap.put(entry.getKey(),percentageMatch);
 			
 			}
 	}
+	
+	
 	public static <K, V extends Comparable<V>> Map<K, V> sortByValues(final Map<K, V> map) {
     Comparator<K> valueComparator = new Comparator<K>() {
       public int compare(K k1, K k2) {
@@ -91,14 +100,12 @@ class Search{
 		// Display elements
 		while(i.hasNext()) {
 		  Map.Entry me = (Map.Entry)i.next();
-		  //System.out.print(me.getKey() + ": ");
 		  String Key = me.getKey().toString();
-		  //System.out.println("Matching Percentage : "+Key.substring(Key.lastIndexOf("\\") + 1).trim()+":"+me.getValue());
 		  String sortedData = "Matching Percentage : "+Key.substring(Key.lastIndexOf("\\") + 1).trim()+":"+me.getValue();
 		  st.push(sortedData);
 		}
 		
-		// print sorted data
+		// Print ordered result
 		while(!st.isEmpty()){
 			System.out.println(st.pop());
 		}
