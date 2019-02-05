@@ -7,7 +7,7 @@ public class ReadAllLineTest{
     public static void main(String[] args){
         StringBuilder fileData = new StringBuilder();;
         try{
-            FileReader fr = new FileReader("C://Users//risha//Desktop//Exp2//Inputs//file1.txt");
+            FileReader fr = new FileReader("E://Rishabh//practice-master//practice-master//Exp2//Inputs//file1.txt");
             BufferedReader br = new BufferedReader(fr);
             
             String line;
@@ -21,7 +21,7 @@ public class ReadAllLineTest{
             System.out.println(e.toString());
         }
 
-        String stringToSearch = "file1 Line 2. y";
+        String stringToSearch = "file1 Line two";
         System.out.println("Complete Data -> "+fileData.toString());
         String[] myData = stringToSearch.split(" ");
         int patternLen = myData.length;
@@ -31,17 +31,30 @@ public class ReadAllLineTest{
             System.out.println("Current str = "+str);
             pat = pat.concat(str.toString());
             System.out.println("Current pat = ["+pat+"]");
-            Pattern p = Pattern.compile(pat);
+            Pattern p = Pattern.compile(pat.trim());
             Matcher m = p.matcher(fileData);
-            if (m.find()) {
-                if(str.length() > count){
+            while (m.find()) {
+                if(str.length() >= count){
                     count += 1;
                     System.out.println("Found "+pat);
+					break;
                 }
             }
             pat = pat.concat(" ");
         }
         System.out.println("Total Count "+ count);
+		System.out.println("Array Split length "+ patternLen);
+		
+		pat = pat.trim();
+		//String[] newSplit = pat.split(" ",2);
+		//System.out.println("Spliting on first space and keeping rest of string -> "+ newSplit[0]+" ,"+newSplit[1]);
+		
+		// Now Search from start
+		for(int i=0; i<patternLen-1; i++){
+			String[] newPattern = pat.split(" ",2);
+			pat = newPattern[1];
+			System.out.println(pat);
+		}
 
         /*Pattern p = Pattern.compile("file1 Line 2");
         Matcher m = p.matcher(fileData);
