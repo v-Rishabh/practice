@@ -21,7 +21,7 @@ public class ReadAllLineTest{
             System.out.println(e.toString());
         }
 
-        String stringToSearch = "file1 Line two";
+        String stringToSearch = "this Line two";
         System.out.println("Complete Data -> "+fileData.toString());
         String[] myData = stringToSearch.split(" ");
         int patternLen = myData.length;
@@ -50,12 +50,33 @@ public class ReadAllLineTest{
 		//System.out.println("Spliting on first space and keeping rest of string -> "+ newSplit[0]+" ,"+newSplit[1]);
 		
 		// Now Search from start
+		int newCount = patternLen;
+		outerLoop:
 		for(int i=0; i<patternLen-1; i++){
 			String[] newPattern = pat.split(" ",2);
 			pat = newPattern[1];
 			System.out.println(pat);
+			Pattern p = Pattern.compile(pat);
+            Matcher m = p.matcher(fileData);
+            while (m.find()) {
+				System.out.println("Found "+pat);
+                newCount--;
+				break outerLoop;
+            }
+		}
+		int result = 0;
+		if(count > newCount){
+			System.out.println("Count = "+ count);
+			result = count;
+		}
+		else{
+			System.out.println("newCount = "+ newCount);
+			result = newCount;
 		}
 
+		double percentageMatch = (result * 100);
+		percentageMatch = percentageMatch/patternLen;
+		System.out.println("Match Percentage is = "+percentageMatch);
         /*Pattern p = Pattern.compile("file1 Line 2");
         Matcher m = p.matcher(fileData);
         while (m.find()) {
