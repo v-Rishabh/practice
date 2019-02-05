@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DeadLock",
+            "request": "launch",
+            "mainClass": "DeadLock",
+            "projectName": "Threading_c4117257"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ThreadSync",
+            "request": "launch",
+            "mainClass": "ThreadSync"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Main",
+            "request": "launch",
+            "mainClass": "Main"
+        }
+    ]
+}

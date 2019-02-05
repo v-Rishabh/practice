@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Hangman_Part1/Hangman_Part1.iml" filepath="$PROJECT_DIR$/Hangman_Part1/Hangman_Part1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hellojava/Hellojava.iml" filepath="$PROJECT_DIR$/Hellojava/Hellojava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LongestCommonSubsequence/LongestCommonSubsequence.iml" filepath="$PROJECT_DIR$/LongestCommonSubsequence/LongestCommonSubsequence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SinglyLinkedList/SinglyLinkedList.iml" filepath="$PROJECT_DIR$/SinglyLinkedList/SinglyLinkedList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/canBalance/canBalance.iml" filepath="$PROJECT_DIR$/canBalance/canBalance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maxSpan/maxSpan.iml" filepath="$PROJECT_DIR$/maxSpan/maxSpan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stringSplosion/stringSplosion.iml" filepath="$PROJECT_DIR$/stringSplosion/stringSplosion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sumNumbers/sumNumbers.iml" filepath="$PROJECT_DIR$/sumNumbers/sumNumbers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/withoutString/withoutString.iml" filepath="$PROJECT_DIR$/withoutString/withoutString.iml" />
+    </modules>
+  </component>
+</project>

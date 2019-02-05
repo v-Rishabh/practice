@@ -1,0 +1,19 @@
+1) mvn archetype:generate 
+
+ArtifactId=maven-archetype-quickstart 
+
+2) select default archetype:106
+
+3) groupID : "packageName"
+
+4) artifactID : "projectName"
+
+5) version : "1.0-SNAPSHOT"
+
+Compiling
+	Go to root directory which has pom.xml file
+	mvn compile
+	mvn package [.jar is created at target folder]
+
+Running
+	java -cp target/jarName <space> packageName.ClassName

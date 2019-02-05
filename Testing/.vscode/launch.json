@@ -1,0 +1,40 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ChildClass",
+            "request": "launch",
+            "mainClass": "ChildClass"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MapTest",
+            "request": "launch",
+            "mainClass": "MapTest"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - unitTest",
+            "request": "launch",
+            "mainClass": "unitTest"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - regexTest",
+            "request": "launch",
+            "mainClass": "regexTest"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - readFile",
+            "request": "launch",
+            "mainClass": "readFile"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - writeFile",
+            "request": "launch",
+            "mainClass": "writeFile"
+        }
+    ]
+}

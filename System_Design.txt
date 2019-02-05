@@ -1,0 +1,160 @@
+3. Design – based on a system or product design problem.
+ 
+This is a good place to start:
+https://github.com/donnemartin/system-design-primer
+  
+You will need to design a system or a product, the problem will be a broad and ambiguous one where you will need to create something, end-to-end, that will scale. 
+You should not assume anything. You should pin down the requirements, we’re looking for you to drive conversation throughout the interview. Be very vocal, say this is what you’re doing/why/ your reasons.
+ It should be your design, not half yours and half the interviewers. Try to cover both breadth and depth, you will need to talk about both high level concepts and details associated.
+ 
+- We want to understand how you reason through a problem that you've not necessarily encountered before.
+- We are looking to get signal on both your technical and communication skills.
+- We expect you to drive the design of your solution and lead the discussion after clarifying the initial problem.
+- Be aware of trade-offs and alternative solutions and express clearly the decisions you make and justify why you made them.
+- Go into a level of technical depth for each element or component of your solution.
+- Think about designing at very large scale as this is what you will be doing.  This www may help: 
+http://highscalability.com/blog/category/example  
+- Have a look at  http://www.hiredintech.com/system-design
+  
+Interview hacks to think about:
+ 
+We don't expect you to know crazy algorithms that are domain-specific (like Quad Trees or Paxos). We do expect you to know that you have a variety of tradeoffs like consistency, availability, partitioning, etc. We also expect that you're working with a modern computer and know ballpark ideas on throughput/capacity for RAM, Hard Drive, Network, etc.
+ 
+A good design shows that you:
+• clearly understand the problem and break it down in a logical way
+• think about a the high level design
+• propose a design for a system that breaks the problem down into components, that can be built independently
+• identify the bottlenecks as the system scales and can poke holes in the design
+• think about all relevant trade-offs
+• understand how to adapt the solution when requirements are changed
+• draw diagrams that clearly describe the relationship between the different components in the system
+• calculate (back-of-the-envelope) the physical resources necessary to make this system work
+ 
+Try not to "one-off" stuff. Break things down into large, isolated components and drill in on things that you think are hard or critical problems.
+ 
+There's a good book called "Cracking the Technical Interview" that has a section called "Large Scale & Memory Limits" with some questions very similar to a design interview, but they're a little too coding focused where the design interview generally avoids coding but may ask data structures.
+ 
+Probably the best way to study is to work out the below problems on a paper and just think about the ways to break them down.
+ 
+Sample Questions:
+•          	"Design PasteBin"
+•          	"Design a Newsfeed system like Instagram"
+•          	"Design the backend for Google Photos"
+•          	“Design a web crawler”
+ 
+Recommended method:
+  
+First Step: Understand the Requirements
+Spent 1-2 minutes clarifying the requirements.  Either give the interviewer an example of what they are asking (e.g. “To make sure I understand the question -- I will design the newsfeed service of Instagram, so I will need to consider things like “what shows up in the feed”, “in what order”, “privacy”, “latency”, “scaling the systems to billions of requests”, “redundancy”, etc. -- Is that what you mean”.  Alternatively you can ask them for an example of the product or feature they want you to design.  Spend no more than 1-2 minutes here.
+ 
+Some further examples:
+ 
+o          	Are there any requirements on running time (online vs offline paths)
+o          	Where are the users?  
+o          	How many users are there?
+o          	Storage requirements?
+o          	Data access or retention requirements?
+o          	Security requirements?
+o          	Mobile vs Web?
+o          	Any APIs we need to externally expose?  Any integration options?
+ 
+ 
+Finally, before you proceed: ask which of the requirements are stronger than others?  For instance, is there a strong requirement around data consistency? Latency? Reliability? Data Privacy?  Can you write an ordered list of the priorities?  Don’t spend a lot of time here, but at least ask the questions -- it’s important that you understand what tradeoffs exist when design systems.   For instance, when speed and consistency are paramount, you should be thinking about synchronous calls.  If some latency and variation in responses is tolerable, then asynchronous/queues are ok.
+ 
+Second Step: Know the facts/figure that can help you estimate
+ 
+Useful resource: https://gist.github.com/jboner/2841832.  
+You could try putting these on note cards and memorizing them.  
+ 
+Useful resource 2: http://i.imgur.com/k0t1e.png   
+This makes it clearer that you want to be reading from SSD, not disk, and certainly not doing many data center round trips.  And you also want to be careful about mutexs and access to shared resources.
+ 
+Now you will want to estimate the scale of the system you will need -- even before you start to design it.  Here are a few questions to ask:
+ 
+• How many API requests will we expect?  (e..g What is the QPS?)
+• What data will be returned in these requests?  (bytes or megabytes or gigabytes)
+• Will there be read AND write operations or just read operations?
+ 
+Chances are, you’ll be given big numbers here.  But it will be good to show that you understand that not every problem needs to be solved with a distributed, scaled system (sometimes things fit onto a single machine).
+ 
+Last Step: Deep Dive/Design
+ 
+• Everywhere that there is a question written below in this preparation email (e.g. “Which objects will be in the system?”), it’s fine for you to just ask the question out loud during the interview.  There are many right answers, and it’s better to ask the question than jump straight to an answer.  
+ 
+• There are many things you may want to think about. You could go to the whiteboard write down the appropriate concepts, such as:
+ 
+o          	Requirements
+o          	Scaling
+o          	Entity Design
+o          	API Design
+o          	Data Storage
+o          	Security/Privacy
+o          	Logging/Analytics
+o          	Reliability
+ 
+• These are a lot of the concepts that need to be covered in any design.  You may not get to all of them, but it’s important you show you understand the “big picture”.  Having the words written down can also help with the pace of the interview, and help you to remember to address as many of the concepts as you can.
+ 
+• When thinking about entity modeling and design (Which objects will be in the system, and what relationships do they have with each other?), write down a few of the objects and relationships between them.  When designing an API, make sure you point out that the API can be used by external AND internal developers (e.g. can be used by the mobile app, the web app, and packaged as an SDK for external developers).  Think about what happens when this API is called?  Here are two excellent articles on it:
+http://blog.gainlo.co/index.php/2016/03/29/design-news-feed-system-part-1-system-design-interview-questions/
+http://blog.gainlo.co/index.php/2016/04/05/design-news-feed-system-part-2/
+ 
+• Write out the overall system topology.  It will almost always look like this at a high level:
+https://gist.github.com/vasanthk/485d1c25737e8e72759f
+ 
+• Data Storage (How will the data be stored physically on both the client and the server, and how will it be accessed).  You will almost certainly be designing a distributed system, so you will want to think about how to distribute it (sometimes this is referred to loosely as “how to shard the solution”.  All this means is -- when you are given a request from a user, how will you decide which backend end server to send to the request?  How will the “Load Balancer” in the above diagram work?  Will you send it to a different server based on username?  Geographic location?  A combination of the two?  The important thing here is to think about how the scale the requests evenly.
+ 
+o Think also about caching: both on the client and server?  What data will you cache?  And why?  How will you invalidate the cache?  (will it be based on time?  If so, how long?)
+ 
+• Security/Privacy
+ 
+o Who can see what? What about permissions?
+o But what about employees?  Which data do they have access to?  Is there new types of data being introduced here?
+o Does the API need any special key to work?  Will the user be granting a permission to an external company?  If so, how will we monitor for abuse?
+ 
+• Logging Analytics
+ 
+o What metrics do we care about?  How will we log this data so that these metrics can be computed?
+o How long do we retain the data?
+ 
+• Reliability
+ 
+o We need monitoring for the new services we introduced
+o We need to be able to measure latency
+o We need to publish service level agreements and metrics
+ 
+Further Suggested Articles
+ 
+• https://www.palantir.com/2011/10/how-to-ace-a-systems-design-interview/
+• https://gist.github.com/vasanthk/485d1c25737e8e72759f
+• http://highscalability.com/blog/2014/7/14/bitly-lessons-learned-building-a-distributed-system-that-han.html
+ 
+We’re looking to see how you handle thinking about the big picture?  Do you know:
+ 
+• How to formulate the goals, non-goals?
+• How to scale the solution?  (where are the bottlenecks?  Is it memory, cpu, storage?)
+• How to break down the processes?
+• What about security?
+• What about privacy?
+• What about logging?  And analytics?
+• Any specific technologies that you'd invest in?
+• What type of caching would you use?  Why?
+• Inter-server communication?
+  
+You should make sure to talk about all the points in the design, even if you can’t elaborate on each one (e.g. Goals, Non-Goal, Security, Scalability, Privacy, Analytics/Logging, Mobile Consideration, Testing).  Take your time at the board, describing everything that has to go into a "complete solution", even if its a bullet point (e.g. "We'll want to make sure we log the thing we care about and have some sort of pipeline that can aggregate the data).  Other things you should think about:
+ 
+• Jeff Dean’s “Numbers every computer scientists should know”.  
+• Use the whiteboard -- make sure you draw what you are talking about.  Make sure that you list every single element in the design headings.
+• LEAD THE INTERVIEW:  We want to see you asking clarifying questions.  Particularly when it comes to requirements gathering.  You’ll be given a very high level problem to solve, and you must pick the kinds of questions that will lead towards solving things successfully.
+ 
+Final things to not to forget!
+ 
+Load Balancers
+Sharding
+Caching / memache
+Grids
+Distribution of Data 
+Speed / space / time trade-offs
+Pagination
+API's
+Client / Server relationships
+Partitioning

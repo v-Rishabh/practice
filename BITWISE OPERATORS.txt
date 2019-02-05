@@ -1,0 +1,82 @@
+BITWISE OPERATORS
+
+NOTE:
+So, should 1011 be read as "eleven" (in binary) or "negative five" (in two's complement)?
+It could be either one! Many languages have two types of numbers: signed and unsigned. Signed numbers are represented in two's complement, and unsigned numbers use plain old base 2.
+So, if an interviewer asks you to convert base-2 into decimal, ask: "is that in two's complement or not?"
+
+
+&AND&
+The AND operation takes two bits and returns 11 if both bits are 11. Otherwise, it returns 00.
+5=0101
+6=0110
+---------- AND
+==0100 => 4
+
+5&6 = 4
+
+|OR|
+The OR operation takes two bits and returns 11 if either of the bits are 11. Otherwise, it returns 00.
+5|6
+5=0101
+6=0110
+---------- OR
+==0111 => 0+4+2+1 => 7
+
+5|6 = 7
+
+^XOR^
+The XOR operation (or exclusive or) takes two bits and returns 11 if exactly one of the bits is 11. Otherwise, it returns 00.
+5^6
+5=0101
+6=0110
+---------- XOR
+==0011 => 0+0+2+1 => 3
+
+5^6 => 3
+
+
+
+Swap 2 numbers using XOR
+x = 5, Y = 6
+
+x = x^y;
+x=5^6 = 3 [x = 3]
+y=x^y;
+y=3^6
+3=0011
+6=0110
+---------XOR
+==0101 => 0+4+0+1 => 5
+y=3^6 = 5 [y = 5]
+x=x^y;
+3=0011
+y=0101
+---------XOR
+==0110 => 0+4+2+0 => 6
+
+X=6
+
+Now x=6 and y=5 [SWAPPED]
+
+
+~NOT~
+The NOT bitwise operation takes one set of bits, and for each bit returns 00 if the bit is 11, and 11 if the bit is 00.
+5=0101
+~5 = 1010 => (-8)+0+2+0 => -6 2's Compliment
+
+
+<<BIT SHIFTING>>
+A single left shift multiplies a binary number by 2:
+0010 << 1 -> 0100 [Left Shift]                  |         0010 = 2 , 0100 = 4
+A single right shift divides a binary number by 2:
+1011 >> 1 -> 0101 [Right Shift]                |         1011 = 11,0101 = 5
+
+Two left shifts multiplies by 4. Three left shifts multiplies by 8.
+1010110 << 2 = 1011000                          |         1010110 = 64+0+16+0+4+2+0 = 86, 1011000 = 64+0+32+8+0+0+0 = 104
+And similarly, shifting right divides by 2, throwing out any remainders.
+1011010 >> 3 = 0001011
+
+
+
+

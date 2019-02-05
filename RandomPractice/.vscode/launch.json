@@ -1,0 +1,44 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SingletonRun",
+            "request": "launch",
+            "mainClass": "SingletonRun"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - QuickSort",
+            "request": "launch",
+            "mainClass": "QuickSort"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PairWithSum",
+            "request": "launch",
+            "mainClass": "PairWithSum",
+            "projectName": "RandomPractice_7e2620d8"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - maxRepeatingElement",
+            "request": "launch",
+            "mainClass": "maxRepeatingElement",
+            "projectName": "RandomPractice_7e2620d8"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ProducerConsumer",
+            "request": "launch",
+            "mainClass": "ProducerConsumer",
+            "projectName": "RandomPractice_7e2620d8"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ProducerConsumerDemo",
+            "request": "launch",
+            "mainClass": "ProducerConsumerDemo",
+            "projectName": "RandomPractice_7e2620d8"
+        }
+    ]
+}

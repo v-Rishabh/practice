@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - InsertNode",
+            "request": "launch",
+            "mainClass": "InsertNode"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TreeAddNodes",
+            "request": "launch",
+            "mainClass": "TreeAddNodes"
+        }
+    ]
+}

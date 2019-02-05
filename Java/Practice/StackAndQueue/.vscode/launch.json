@@ -1,0 +1,52 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - StockSPanTest",
+            "request": "launch",
+            "mainClass": "StockSPanTest"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - QueueTest",
+            "request": "launch",
+            "mainClass": "QueueTest"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Test",
+            "request": "launch",
+            "mainClass": "Test"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PreviousGreaterMain",
+            "request": "launch",
+            "mainClass": "PreviousGreaterMain"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - NextGreaterPractice",
+            "request": "launch",
+            "mainClass": "NextGreaterPractice"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - nextGreaterPractice",
+            "request": "launch",
+            "mainClass": "nextGreaterPractice"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - NextGreaterElement",
+            "request": "launch",
+            "mainClass": "NextGreaterElement"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CircularArray",
+            "request": "launch",
+            "mainClass": "CircularArray"
+        }
+    ]
+}
