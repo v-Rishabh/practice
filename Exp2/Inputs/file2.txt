@@ -1,3 +1,3 @@
-This is file2 Line 1.
-This is file2 Line 2.
-This is file2 Line 3.
+This is file2 Line one
+This is file2 Line two
+This is file2 Line three

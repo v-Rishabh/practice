@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class ReadAllLineTest{
     public static void main(String[] args){
-        StringBuilder fileData = new StringBuilder();;
+        StringBuilder fileData = new StringBuilder();
         try{
             FileReader fr = new FileReader("E://Rishabh//practice-master//practice-master//Exp2//Inputs//file1.txt");
             BufferedReader br = new BufferedReader(fr);
@@ -21,7 +21,7 @@ public class ReadAllLineTest{
             System.out.println(e.toString());
         }
 
-        String stringToSearch = "this Line two";
+        String stringToSearch = "file1 Line two";
         System.out.println("Complete Data -> "+fileData.toString());
         String[] myData = stringToSearch.split(" ");
         int patternLen = myData.length;

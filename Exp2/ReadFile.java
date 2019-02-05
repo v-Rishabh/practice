@@ -2,13 +2,14 @@ import java.io.*;
 import java.util.*;
 
 public class ReadFile{
-    private HashMap<String, ArrayList<String>> map = new HashMap<>();
+    private HashMap<String,String> map = new HashMap<>();
     private ArrayList<String> pathList;
     ReadFile(ArrayList<String> list){
         pathList = list;
     }
 
     public void readAllFiles(){
+		StringBuilder fileData = new StringBuilder();
         for(String path : pathList){
             //System.out.println("Data for file -> "+path);
             try{
@@ -17,19 +18,11 @@ public class ReadFile{
                 String line;
                 ArrayList<String> list;
                 while((line = br.readLine()) != null){
-                    //System.out.println(line);
-                    if(map.containsKey(path)){
-                        list = map.get(path);
-                        list.add(line);
-                    }
-                    else{
-                        list = new ArrayList<String>();
-                        list.add(line);
-                        map.put(path, list);
-                    }
-                    
+                    fileData.append(line);
                 }
                 br.close();
+				map.put(path,fileData.toString());
+				fileData.setLength(0);
             }
             catch(IOException e){
                 System.out.println(e.toString());
@@ -40,7 +33,7 @@ public class ReadFile{
 
     }
 
-    public HashMap<String,ArrayList<String>> getData(){
+    public HashMap<String,String> getData(){
         return map;
     }
 
