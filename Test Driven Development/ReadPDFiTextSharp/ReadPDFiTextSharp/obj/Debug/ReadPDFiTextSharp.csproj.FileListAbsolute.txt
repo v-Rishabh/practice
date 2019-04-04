@@ -1,0 +1,8 @@
+c:\users\rishabh.verma\documents\visual studio 2015\Projects\ReadPDFiTextSharp\ReadPDFiTextSharp\bin\Debug\ReadPDFiTextSharp.exe.config
+c:\users\rishabh.verma\documents\visual studio 2015\Projects\ReadPDFiTextSharp\ReadPDFiTextSharp\bin\Debug\ReadPDFiTextSharp.exe
+c:\users\rishabh.verma\documents\visual studio 2015\Projects\ReadPDFiTextSharp\ReadPDFiTextSharp\bin\Debug\ReadPDFiTextSharp.pdb
+c:\users\rishabh.verma\documents\visual studio 2015\Projects\ReadPDFiTextSharp\ReadPDFiTextSharp\bin\Debug\itextsharp.dll
+c:\users\rishabh.verma\documents\visual studio 2015\Projects\ReadPDFiTextSharp\ReadPDFiTextSharp\bin\Debug\itextsharp.xml
+c:\users\rishabh.verma\documents\visual studio 2015\Projects\ReadPDFiTextSharp\ReadPDFiTextSharp\obj\Debug\ReadPDFiTextSharp.csprojResolveAssemblyReference.cache
+c:\users\rishabh.verma\documents\visual studio 2015\Projects\ReadPDFiTextSharp\ReadPDFiTextSharp\obj\Debug\ReadPDFiTextSharp.exe
+c:\users\rishabh.verma\documents\visual studio 2015\Projects\ReadPDFiTextSharp\ReadPDFiTextSharp\obj\Debug\ReadPDFiTextSharp.pdb

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadPDFiTextSharp", "ReadPDFiTextSharp\ReadPDFiTextSharp.csproj", "{22F0854E-D400-4EFE-9D9C-E51BE23B1BAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadPDF_TDD", "ReadPDF_TDD\ReadPDF_TDD.csproj", "{860BC8BE-CD0D-4B96-9E52-80C0C60485E9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22F0854E-D400-4EFE-9D9C-E51BE23B1BAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22F0854E-D400-4EFE-9D9C-E51BE23B1BAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22F0854E-D400-4EFE-9D9C-E51BE23B1BAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22F0854E-D400-4EFE-9D9C-E51BE23B1BAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{860BC8BE-CD0D-4B96-9E52-80C0C60485E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{860BC8BE-CD0D-4B96-9E52-80C0C60485E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{860BC8BE-CD0D-4B96-9E52-80C0C60485E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{860BC8BE-CD0D-4B96-9E52-80C0C60485E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
