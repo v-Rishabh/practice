@@ -1,0 +1,7 @@
+jar -cef Main MyClasses.jar .
+
+jar -cef {Main Class Name} {Jar name}.jar .
+
+java -jar MyClasses.jar
+
+java -jar {Jar name}.jar
