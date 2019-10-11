@@ -1,0 +1,10 @@
+E:\Snippets\ReconService\ReconService\bin\Release\ReconService.exe.config
+E:\Snippets\ReconService\ReconService\bin\Release\log4net.config
+E:\Snippets\ReconService\ReconService\bin\Release\ReconService.exe
+E:\Snippets\ReconService\ReconService\bin\Release\ReconService.pdb
+E:\Snippets\ReconService\ReconService\bin\Release\log4net.dll
+E:\Snippets\ReconService\ReconService\bin\Release\log4net.xml
+E:\Snippets\ReconService\ReconService\obj\x86\Release\ReconService.ProjectInstaller.resources
+E:\Snippets\ReconService\ReconService\obj\x86\Release\ReconService.csproj.GenerateResource.Cache
+E:\Snippets\ReconService\ReconService\obj\x86\Release\ReconService.exe
+E:\Snippets\ReconService\ReconService\obj\x86\Release\ReconService.pdb

@@ -1,0 +1,5 @@
+E:\Snippets\ReconService\ReconService\bin\Debug
+? ReconService.exe --install
+
+E:\Snippets\ReconService\ReconService\bin\Debug
+? ReconService.exe --uninstall

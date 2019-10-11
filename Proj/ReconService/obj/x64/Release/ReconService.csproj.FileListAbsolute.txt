@@ -1,0 +1,1 @@
+E:\Snippets\ReconService\ReconService\bin\x64\Release\ReconService.exe.config

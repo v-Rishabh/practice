@@ -1,0 +1,29 @@
+﻿1. It is assumed that data received from BMS is correct and would remain unchanged in way. For verification we would store the result of queries in a separate table.
+2. For routename in trip table we would be taking it from previous day trip of same duty ID which is complete, i.e whose Shift and Trip is completly present in Shift and Trip table of ETM.
+3. We are not geting ETM Serial Number from BMS so in place of ETM_UID in Shift ID and Trip ID we would be using 5 characters as 'NNNNN'.
+4. We would alter the partial closer table with a new column named AutoRecon_Flag. This flag would be set to true if the row is added by Auto Recon Tool.
+5. If Recon tool is unable to pocess certain records or fail while processing some record, Then in that case all such types of records would we stored in Exceptions Table.
+
+
+6. We are fetching these[Vehicle Number, Route Name, Origin Stop ID and Destination Stop ID] records from AVL DB.
+
+7. In Trip we are having only total etm revenue for that trip and not having the total number of tickets, So for calculating total number of tickets we are using below formula :
+	Details Present: Total ETM Revenue(For Complete Shift), Total number of Tickets(Complete Shift), Total ETM revenue for particular Trip.
+	Calculation: 
+					a) Get %age of revenue each trip has.
+					b) Calculate no of tickets for that trip with respect to %age of trip revenue.
+					c) Add the remaining tickets to trip with maximum revenue.
+
+	Checking: 
+					a) Total Sum of ticket count of all the trips should be equal to Toatal Ticket count in Shift.
+
+8. Handle Cases like below:[Done]
+	BMS DUTY NO.	BMS DUTY DATE	BMS CONDUCTOR ID	BMS TOTAL REVENUE	BMS DEPOT NAME								ETM DUTY NO	ETM DUTY DATE	ETM CONDUCTOR ID	ETM TOTAL REVENUE	DEPOT NAME	ETM BMS REASON DESC	ETM BMS REMARKS		BMS ETM SR NO.
+	473/46,479A/30	09/01/2019			15159				5740			KUSHAK NALLAH DEPOT,KUSHAK NALLAH DEPOT	 	 	 	 	 	 	 																									314-158-446,NO ETM
+
+9. If there is any difference between Trip [start/end] time of BMS and AVL then we are considering data from BMS, as Shift is also created using BMS Data.
+
+10. Shift and Trips number of tickets may vary from production as we we are not provided with passengers count/Number of tickets and we calculate it manually.
+
+11. It is assumed that Trip_start_time for decendent trip is always greater than Trip_End_Time of previous trip, as this data we are picking from Master table in AVL. This is the same table which is used for
+	allocating duties. 
